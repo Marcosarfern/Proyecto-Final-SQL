@@ -59,6 +59,7 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 # DER SIMPLIFICADO
 
 ``
+
 +------------------------+        +------------------------+         +------------------+         +------------------+ 
 | TIPODESERVICIO         |        |       SOLICITUD        |         |     CLIENTE      |         |   PARTICULARES   |
 +------------------------+        +------------------------+         +------------------+         +------------------+
@@ -82,6 +83,7 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 | email                |        | billeteravirtual   |             | telefono          |
 | id_tipodeservicio(FK)|        | acreditado         |             | direccion         |
 +----------------------+        +--------------------+             +-------------------+                    
+
                           
 ``
 
