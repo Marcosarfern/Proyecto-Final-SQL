@@ -22,9 +22,11 @@ La base de datos se genera para la gestión de solicitudes de servicios dentro d
 **1. CLIENTE**
    - Esta tabla intermedia contiene la información de los clientes que realizan solicitudes particulares y empresas
    - Atributos: ID_CLIENTE, ID_PARTICULARES, ID_EMPRESA
+
 **2. PARTICULARES**
    - Almacena información de los clientes particulares
    - Atributos: ID_PARTICULARES, NOMBRE, TELEFONO, DIRECCION, EMAIL
+
 **3. EMPRESAS**
    - Almacena información de las empresas que solicitan servicios
    - Atributos: ID_EMPRESA; NOMBRE, RAZON_SOCIAL, TELEFONO, EMAIL
