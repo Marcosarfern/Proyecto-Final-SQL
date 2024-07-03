@@ -59,7 +59,36 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 # DER SIMPLIFICADO
 
 
-
++------------------------+        +-----------------------+         +------------------+
+| TIPODESERVICIO         |        |       SOLICITUD       |         |     RESTAURANTE  |
++------------------------+        +-----------------------+         +------------------+
+| id_tipodeservicio (PK) |<>-----o| id_Solicitud (PK)      |o-------| idRestaurante(PK)|
+|                        |        | id_Cliente (FK)        |        | nombre           |
+|                        |        | id_Empleado (FK)       |        | direccion        |
+|                        |        | id_Tipodeservicio (FK) |        | telefono         |
++------------------------+        | id_Mediodepago (FK)    |        +------------------+
+                                  |                        |
+                                  |                        |                  |
+                                  +-----------------------+                  |
+                                    |                                  |
+                                    |                                  |
+                                    v                                  v
++------------------+        +------------------+             +-------------------+
+|     Empleado     |        |      Mesa        |             |     Dueno         |
++------------------+        +------------------+             +-------------------+
+| idEmpleado (PK)  |        | idMesa (PK)      |             | idDueno (PK)      |
+| nombre           |        | idRestaurante(FK)|             | nombre            |
+| telefono         |        | capacidad        |             | correo            |
+| correo           |        | disponible       |             | telefono          |
+| idRestaurante(FK)|        +------------------+             +-------------------+
++------------------+                  |
+                             +-------------------+
+                             |   TipoReserva     |
+                             +-------------------+
+                             | idTipoReserva(PK) |
+                             | tipo              |
+                             +-------------------+
+``
 
 
 
