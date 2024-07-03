@@ -30,15 +30,19 @@ La base de datos se genera para la gestión de solicitudes de servicios dentro d
 **3. EMPRESAS**
    - Almacena información de las empresas que solicitan servicios
    - Atributos: ID_EMPRESA; NOMBRE, RAZON_SOCIAL, TELEFONO, EMAIL
+     
 **4. EMPLEADOS**
    - Contiene la información de los empleados
    - Atributos: ID_EMPLEADO, NOMBRE, TELEFONO, EMAIL, ID_TIPO_DE_SERVICIO, DISPONIBILIDAD, CALIFICACION
+     
 **5. TIPO DE SERVICIO**
    - Esta tabla contiene los servicios disponibles 
    - Atributos: ID_TIPO_DE_SERVICIO, GASISTA, PLOMERIA, ELECTRICIDAD, SISTEMAS
+     
 **6. SOLICITUDES**
    - Almacena toda la información de los pedidos que realizan los clientes, el o los empleados enviados y el tipo de servicio solicitado
    - Atributos: ID_SOLICITUD, FECHA, ID_EMPLEADO, ID_CLIENTE, ID_TIPO_DE_SERVICIO, ID_MEDIO_DE_PAGO
+     
 **7. MEDIO DE PAGO**
    - Esta tabla almacena el metodo de pago seleccionado para abonar el servicio prestado
    - Atributos: ID_MEDIO_DE_PAGO, EFECTIVO, TARJETA, BILLETERA_VIRTUAL
