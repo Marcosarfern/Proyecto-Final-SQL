@@ -82,10 +82,10 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 | telefono             |        | tajeta             |             | razon_social      |
 | email                |        | billeteravirtual   |             | telefono          |
 | id_tipodeservicio(FK)|        | acreditado         |             | direccion         |
-+----------------------+        +--------------------+             +-------------------+                    
-
-                          
++----------------------+        +--------------------+             +-------------------+                                     
 ``
+
+
 
 
 
