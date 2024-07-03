@@ -29,7 +29,7 @@ La base de datos se genera para la gestión de solicitudes de servicios dentro d
 
 **3. EMPRESAS**
    - Almacena información de las empresas que solicitan servicios
-   - Atributos: ID_EMPRESA; NOMBRE, RAZON_SOCIAL, TELEFONO, EMAIL
+   - Atributos: ID_EMPRESA; NOMBRE, RAZON_SOCIAL, TELEFONO, EMAIL, DIRECCION
      
 **4. EMPLEADOS**
    - Contiene la información de los empleados
