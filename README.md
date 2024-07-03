@@ -58,7 +58,6 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 
 # DER SIMPLIFICADO
 
--
 ``
 
 +------------------------+        +------------------------+         +------------------+         +------------------+ 
@@ -86,4 +85,3 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 +----------------------+        +--------------------+             +-------------------+                                     
 ``
 
--
