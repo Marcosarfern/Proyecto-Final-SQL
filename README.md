@@ -45,7 +45,7 @@ La base de datos se genera para la gestión de solicitudes de servicios dentro d
      
 **7. MEDIO DE PAGO**
    - Esta tabla almacena el metodo de pago seleccionado para abonar el servicio prestado
-   - Atributos: ID_MEDIO_DE_PAGO, EFECTIVO, TARJETA, BILLETERA_VIRTUAL
+   - Atributos: ID_MEDIO_DE_PAGO, EFECTIVO, TARJETA, BILLETERA_VIRTUAL, ACREDITADO
 
 # Problemática resuelta
 Mediante esta base se permite gestionar los procesos de solicitudes de servicios, conteniendo datos tanto de clientes y empleados, la disponibilidad de estos ultimos, su calificación en base al servicio prestado y el registro de las solicitudes.
@@ -59,35 +59,30 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 # DER SIMPLIFICADO
 
 
-+------------------------+        +-----------------------+         +------------------+
-| TIPODESERVICIO         |        |       SOLICITUD       |         |     RESTAURANTE  |
-+------------------------+        +-----------------------+         +------------------+
-| id_tipodeservicio (PK) |<>-----o| id_Solicitud (PK)      |o-------| idRestaurante(PK)|
-|                        |        | id_Cliente (FK)        |        | nombre           |
-|                        |        | id_Empleado (FK)       |        | direccion        |
-|                        |        | id_Tipodeservicio (FK) |        | telefono         |
-+------------------------+        | id_Mediodepago (FK)    |        +------------------+
-                                  |                        |
-                                  |                        |                  |
-                                  +-----------------------+                  |
-                                    |                                  |
-                                    |                                  |
-                                    v                                  v
-+------------------+        +------------------+             +-------------------+
-|     Empleado     |        |      Mesa        |             |     Dueno         |
-+------------------+        +------------------+             +-------------------+
-| idEmpleado (PK)  |        | idMesa (PK)      |             | idDueno (PK)      |
-| nombre           |        | idRestaurante(FK)|             | nombre            |
-| telefono         |        | capacidad        |             | correo            |
-| correo           |        | disponible       |             | telefono          |
-| idRestaurante(FK)|        +------------------+             +-------------------+
-+------------------+                  |
-                             +-------------------+
-                             |   TipoReserva     |
-                             +-------------------+
-                             | idTipoReserva(PK) |
-                             | tipo              |
-                             +-------------------+
++------------------------+        +------------------------+         +------------------+         +------------------+ 
+| TIPODESERVICIO         |        |       SOLICITUD        |         |     CLIENTE      |         |   PARTICULARES   |
++------------------------+        +------------------------+         +------------------+         +------------------+
+| id_tipodeservicio (PK) |<>-----o| id_Solicitud (PK)      |o------- | id_Cliente(PK)   | ------> | id_Particulares  |
+|                        |        | id_Cliente (FK)        |         | id_Particulares  |         | nombre           |
+|                        |        | id_Empleado (FK)       |         | id_Empresas      |         | telefono         |
+|                        |        | id_Tipodeservicio (FK) |         |                  |         | email            |
++------------------------+        | id_Mediodepago (FK)    |         +------------------+         | documento        |
+                                  |                        |                   |                  | direccion        |
+                 _ _ _ _ _ _ _ <> |                        |                   |                  +------------------+
+                |                 +------------------------+                   |
+                |                        |                                     |
+                |                        |                                     |
+                o                        v                                     v
++----------------------+        +--------------------+             +-------------------+
+|     EMPLEADOS        |        |    MEDIODEPAGO     |             |     EMPRESAS      |
++----------------------+        +--------------------+             +-------------------+
+| idEmpleado (PK)      |        | id_mediodepago (PK)|             | id_Empresas (PK)  |
+| nombre               |        | efectivo(FK)       |             | nombre            |
+| telefono             |        | tajeta             |             | razon_social      |
+| email                |        | billeteravirtual   |             | telefono          |
+| id_tipodeservicio(FK)|        | acreditado         |             | direccion         |
++----------------------+        +--------------------+             +-------------------+                    
+                          
 ``
 
 
