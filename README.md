@@ -33,7 +33,7 @@ La base de datos se genera para la gestión de solicitudes de servicios dentro d
      
 **4. EMPLEADOS**
    - Contiene la información de los empleados
-   - Atributos: ID_EMPLEADO, NOMBRE, TELEFONO, EMAIL, ID_TIPO_DE_SERVICIO, DISPONIBILIDAD, CALIFICACION
+   - Atributos: ID_EMPLEADO, NOMBRE, TELEFONO, EMAIL, ESPECIALIDAD, DISPONIBILIDAD, CALIFICACION
      
 **5. TIPO DE SERVICIO**
    - Esta tabla contiene los servicios disponibles 
