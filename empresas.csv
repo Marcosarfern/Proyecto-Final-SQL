@@ -1,0 +1,16 @@
+ID_EMPRESAS,NOMBRE,TELEFONO,EMAIL,DIRECCION
+1,Empresa Uno,1234567890,empresa.uno@example.com,Calle Industrial 1
+2,Empresa Dos,0987654321,empresa.dos@example.com,Avenida Central 2
+3,Empresa Tres,1112223333,empresa.tres@example.com,Calle Comercio 3
+4,Empresa Cuatro,4445556666,empresa.cuatro@example.com,Avenida de la Innovación 4
+5,Empresa Cinco,7778889999,empresa.cinco@example.com,Calle de los Negocios 5
+6,Empresa Seis,2223334444,empresa.seis@example.com,Avenida del Progreso 6
+7,Empresa Siete,3334445555,empresa.siete@example.com,Calle de la Tecnología 7
+8,Empresa Ocho,8889990000,empresa.ocho@example.com,Avenida de la Creatividad 8
+9,Empresa Nueve,6667778888,empresa.nueve@example.com,Calle de la Visión 9
+10,Empresa Diez,5556667777,empresa.diez@example.com,Avenida de los Sueños 10
+11,Empresa Once,9990001111,empresa.once@example.com,Calle del Futuro 11
+12,Empresa Doce,4445551111,empresa.doce@example.com,Avenida de la Energía 12
+13,Empresa Trece,8887776666,empresa.trece@example.com,Calle de la Esperanza 13
+14,Empresa Catorce,7776665555,empresa.catorce@example.com,Avenida de la Sabiduría 14
+15,Empresa Quince,1112220000,empresa.quince@example.com,Calle de la Ilusión 15
