@@ -85,3 +85,103 @@ Mediante esta base se permite gestionar los procesos de solicitudes de servicios
 +----------------------+        +--------------------+             +-------------------+                                     
 ``
 
+
+**##Creación de nuevas tablas**
+A continuacion se detallan la nuevas tablas creadas para enriquecer esta base de datos
+
+**1. NOTIFICACIONES**
+   - Esta tabla sirve para enviar notificaciones a clientes y empleados sobre servicios, promociones, etc.
+   - Atributos: ID_NOTIFICACION, ID_CLIENTE, ID_EMPRESA, MENSAJE, FECHA, LEIDO
+
+**2. FACTURAS**
+   - Para gestionar la facturación de los servicios prestados a los clientes.
+   - Atributos: ID_FACTURA, ID_SOLICITUD, FECHA_FACTURA, TOTAL, PAGADO
+
+**3. TIEMPOS_SERVICIO**
+   - Se utiliza para registrar los tiempos estimados y reales de realización de los servicios.
+   - Atributos: ID_TIEMPO; ID_SOLICITUD, TIEMPO_ESTIMADO, TIEMPO_REAL
+     
+**4. COMENTARIOS**
+   - Esta tabla permite a los clientes dejar comentarios y calificaciones sobre los servicios prestados.
+   - Atributos: ID_COMENTARIO, ID_SOLICITUD, ID_CLIENTE, CALIFICACION, COMENTARIO, FECHA
+
+```
+-- Tabla de Notificaciones
+--Para enviar notificaciones a clientes y empleados sobre servicios, promociones, etc.
+CREATE TABLE NOTIFICACIONES (
+    ID_NOTIFICACION INT PRIMARY KEY AUTO_INCREMENT,
+    ID_CLIENTE INT,
+    ID_EMPLEADO INT,
+    MENSAJE TEXT,
+    FECHA DATETIME,
+    LEIDO BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE(ID_CLIENTE),
+    FOREIGN KEY (ID_EMPLEADO) REFERENCES EMPLEADO(ID_EMPLEADO)
+);
+
+--Tabla de Facturas
+--Para gestionar la facturación de los servicios prestados a los clientes.
+CREATE TABLE FACTURAS (
+    ID_FACTURA INT PRIMARY KEY AUTO_INCREMENT,
+    ID_SOLICITUD INT,
+    FECHA_FACTURA DATETIME,
+    TOTAL DECIMAL(10, 2),
+    PAGADO BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (ID_SOLICITUD) REFERENCES SOLICITUD(ID_SOLICITUD)
+);
+
+--Tabla de Tiempos de Servicio
+--Para registrar los tiempos estimados y reales de realización de los servicios.
+CREATE TABLE TIEMPOS_SERVICIO (
+    ID_TIEMPO INT PRIMARY KEY AUTO_INCREMENT,
+    ID_SOLICITUD INT,
+    TIEMPO_ESTIMADO INT, -- en minutos
+    TIEMPO_REAL INT,     -- en minutos
+    FOREIGN KEY (ID_SOLICITUD) REFERENCES SOLICITUD(ID_SOLICITUD)
+);
+
+--Tabla de Comentarios/Reseñas
+--Para permitir a los clientes dejar comentarios y calificaciones sobre los servicios prestados.
+CREATE TABLE COMENTARIOS (
+    ID_COMENTARIO INT PRIMARY KEY AUTO_INCREMENT,
+    ID_SOLICITUD INT,
+    ID_CLIENTE INT,
+    CALIFICACION INT CHECK (CALIFICACION BETWEEN 1 AND 5),
+    COMENTARIO TEXT,
+    FECHA DATETIME,
+    FOREIGN KEY (ID_SOLICITUD) REFERENCES SOLICITUD(ID_SOLICITUD),
+    FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE(ID_CLIENTE)
+);
+
+
+-- Relaciones de las Nuevas Tablas
+-- Tabla de Comentarios/Reseñas
+ALTER TABLE COMENTARIOS
+ADD CONSTRAINT FK_COMENTARIOS_SOLICITUD
+FOREIGN KEY (ID_SOLICITUD) REFERENCES SOLICITUD(ID_SOLICITUD);
+
+ALTER TABLE COMENTARIOS
+ADD CONSTRAINT FK_COMENTARIOS_CLIENTE
+FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE(ID_CLIENTE);
+
+--Tabla de Notificaciones
+ALTER TABLE NOTIFICACIONES
+ADD CONSTRAINT FK_NOTIFICACIONES_CLIENTE
+FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE(ID_CLIENTE);
+
+ALTER TABLE NOTIFICACIONES
+ADD CONSTRAINT FK_NOTIFICACIONES_EMPLEADO
+FOREIGN KEY (ID_EMPLEADO) REFERENCES EMPLEADO(ID_EMPLEADO);
+
+
+--Tabla de Tiempos de Servicio
+ALTER TABLE TIEMPOS_SERVICIO
+ADD CONSTRAINT FK_TIEMPOS_SERVICIO_SOLICITUD
+FOREIGN KEY (ID_SOLICITUD) REFERENCES SOLICITUD(ID_SOLICITUD);
+
+--Tabla de Facturas
+ALTER TABLE FACTURAS
+ADD CONSTRAINT FK_FACTURAS_SOLICITUD
+FOREIGN KEY (ID_SOLICITUD) REFERENCES SOLICITUD(ID_SOLICITU
+```
+
