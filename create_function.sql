@@ -14,8 +14,3 @@ BEGIN
     RETURN total;
 END;
 
-
--- Como usar esta función (se pone entre parentesis el perido del cual se quiere obtener el dato, como en el ejemplo citado abajo)
-
-SELECT TotalVentasPorFecha('2024-01-01', '2024-01-31') AS TotalVentasEnero;
-
