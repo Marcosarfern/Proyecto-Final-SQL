@@ -478,4 +478,20 @@ SELECT * FROM TIPODESERVICIO;
 Se crean distintos usuarios con distintos roles acordes a las necesidades de cada sector.
 
 **Usuario Admin**
+Este usuario tiene acceso a todas las tablas y funciones
+Usuario:'usuario_admin'
+Contraseña:'Admin1'
+
+**Usuario Finanzas**
+Este usuario tiene acceso a las tablas 'FACTURAS', 'CLIENTE', 'EMPLEADOS', 'MEDIOSDEPAGO'
+Usuario:'usuario_contable'
+Contraseña:'Finanzas1'
+
+**Usuario Marketing**
+Este usuario tiene acceso a las tablas 'CLIENTE', 'NOTIFICACIONES'
+Usuario:'usuario_marketing'
+Contraseña:'Marketing1'
+
+**##Backup**
+Se creó un backup a través de un dump
 
