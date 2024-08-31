@@ -446,6 +446,8 @@ VALUES (1, 1, 2, 'El servicio fue muy deficiente.', NOW());
 SELECT * FROM MALAS_CALIFICACIONES;
 ```
 
+
+
 **##Stored Procedure**
 Este stored procedure se crea para poder inserta un nuevo tipo de servicio en la tabla TIPODESERVICIO en caso de que la empresa decida abarcar nuevos servicios dentro de su aplicación:
 
@@ -470,3 +472,10 @@ CALL AgregarTipoDeServicio('Servicio Nuevo');
 ```
 SELECT * FROM TIPODESERVICIO;
 ```
+
+
+**##Creación de Usuarios**
+Se crean distintos usuarios con distintos roles acordes a las necesidades de cada sector.
+
+**Usuario Admin**
+
